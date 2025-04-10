@@ -9,7 +9,7 @@ export default async function Home() {
   const musicEntries = await getAllMarkdownFiles("music");
 
   return (
-    <div className="space-y-8 pb-24">
+    <div className="space-y-8 pb-32">
       {codeEntries.length > 0 && <CodePreview entry={codeEntries[0]} />}
 
       {wordsEntries.length > 0 && <WordsPreview entry={wordsEntries[0]} />}

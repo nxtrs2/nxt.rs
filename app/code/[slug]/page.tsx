@@ -1,21 +1,25 @@
-import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown"
-import Image from "next/image"
-import Link from "next/link"
-import { formatDate } from "@/lib/utils"
+import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
+import Image from "next/image";
+import Link from "next/link";
+import { formatDate } from "@/lib/utils";
 
 export async function generateStaticParams() {
-  const entries = await getAllMarkdownFiles("code")
+  const entries = await getAllMarkdownFiles("code");
 
   return entries.map((entry) => ({
     slug: entry.id,
-  }))
+  }));
 }
 
-export default async function CodeEntry({ params }: { params: { slug: string } }) {
-  const entry = await getMarkdownData("code", params.slug)
+export default async function CodeEntry({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const entry = await getMarkdownData("code", params.slug);
 
   return (
-    <div className="space-y-6 pb-24">
+    <div className="p-3 content-bg space-y-6 md:max-w-[490px] dark:bg-black dark:bg-opacity-60">
       <h1 className="font-roboto-slab text-2xl font-normal">{entry.title}</h1>
 
       {entry.image && (
@@ -30,7 +34,10 @@ export default async function CodeEntry({ params }: { params: { slug: string } }
         </div>
       )}
 
-      <div className="prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
+      <div
+        className="prose prose-sm dark:prose-invert"
+        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
+      />
 
       {entry.link && (
         <div className="my-4">
@@ -69,5 +76,5 @@ export default async function CodeEntry({ params }: { params: { slug: string } }
         {entry.updated && <p>Updated: {formatDate(entry.updated)}</p>}
       </div>
     </div>
-  )
+  );
 }
