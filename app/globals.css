@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos&family=Roboto+Slab:wght@100;400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  min-height: 100vh;
+  max-height: 1024px;
+  overflow-y: auto;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
+
+.bg-image {
+  background-image: url("/images/light-bg.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.dark .bg-image {
+  background-image: url("/images/dark-bg.png");
+}
+
+/* Content background styles */
+.content-bg {
+  @apply p-5;
+  background-color: rgba(199, 199, 199, 0.8); /* #C7C7C7 with 90% opacity */
+}
+
+@media (max-width: 768px) {
+  .bg-image {
+    background-size: cover;
+  }
+}
