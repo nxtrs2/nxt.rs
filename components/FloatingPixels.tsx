@@ -2,6 +2,7 @@
 
 import type React from "react";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 interface Pixel {
   id: number;
@@ -12,12 +13,13 @@ interface Pixel {
 }
 
 const FloatingPixels: React.FC = () => {
+  const { theme } = useTheme();
   const [pixels, setPixels] = useState<Pixel[]>([]);
 
   useEffect(() => {
     const createPixels = () => {
       const newPixels: Pixel[] = [];
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 10; i++) {
         newPixels.push({
           id: i,
           x: Math.random() * window.innerWidth,
@@ -45,6 +47,10 @@ const FloatingPixels: React.FC = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+
+  if (theme === "light") {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 pointer-events-none">
