@@ -8,7 +8,7 @@ export default function MusicPreview({ entry }: { entry: any }) {
         href={`/music/${entry.id}`}
         className=" block hover:opacity-80 transition-opacity"
       >
-        <h3 className="content-bg inline-block font-roboto-slab text-xl font-normal dark:bg-black dark:bg-opacity-60">
+        <h3 className="content-bg inline-block  py-1 px-3 font-roboto-slab text-xl font-normal dark:bg-black dark:bg-opacity-60">
           MUSIC: {entry.title}
         </h3>
         <div className="flex items-start space-x-4 mt-1">
@@ -22,7 +22,7 @@ export default function MusicPreview({ entry }: { entry: any }) {
                 className="object-cover content-bg dark:bg-black dark:bg-opacity-60"
               />
 
-              <div className=" content-bg dark:bg-black dark:bg-opacity-60 flex flex-col justify-between">
+              <div className="p-3 content-bg dark:bg-black dark:bg-opacity-60 flex flex-col justify-between">
                 <p className=" text-gray-800 dark:text-gray-200">
                   {entry.isAlbum ? "Album" : "Single"} Set of paragraphs with
                   more text here going on at length about something interesting.

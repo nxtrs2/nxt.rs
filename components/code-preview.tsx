@@ -7,11 +7,11 @@ export default function CodePreview({ entry }: { entry: any }) {
         href={`/code/${entry.id}`}
         className="block hover:opacity-80 transition-opacity"
       >
-        <h3 className="inline-block content-bg font-roboto-slab text-xl dark:bg-black dark:bg-opacity-60">
+        <h3 className="py-1 px-3 inline-block content-bg font-roboto-slab text-xl dark:bg-black dark:bg-opacity-60">
           CODE: {entry.title}
         </h3>
         <div
-          className="content-bg mt-1 prose prose-sm dark:prose-invert p-5 dark:bg-black dark:bg-opacity-60"
+          className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
           dangerouslySetInnerHTML={{
             __html: entry.contentHtml.substring(0, 200) + "...",
           }}

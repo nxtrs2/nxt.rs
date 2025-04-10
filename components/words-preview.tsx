@@ -7,12 +7,12 @@ export default function WordsPreview({ entry }: { entry: any }) {
         href={`/words/${entry.id}`}
         className="block hover:opacity-80 transition-opacity"
       >
-        <h3 className="content-bg py-2 px-5 inline-block  font-roboto-slab text-xl font-normal dark:bg-black dark:bg-opacity-60">
+        <h3 className="content-bg py-1 px-3 inline-block font-roboto-slab text-xl font-normal dark:bg-black dark:bg-opacity-60">
           WORDS: {entry.title}
         </h3>
 
         <div
-          className="content-bg mt-1 prose prose-sm dark:prose-invert dark:bg-black dark:bg-opacity-60"
+          className="content-bg mt-1 prose prose-sm dark:prose-invert dark:bg-black dark:bg-opacity-60 p-3"
           dangerouslySetInnerHTML={{
             __html: entry.contentHtml.substring(0, 200) + "...",
           }}

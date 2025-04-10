@@ -35,6 +35,11 @@ h6 {
   font-weight: 400;
 }
 
+p {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .bg-image {
   background-image: url("/images/light-bg.png");
   background-position: bottom center;
@@ -47,7 +52,7 @@ h6 {
 
 /* Content background styles */
 .content-bg {
-  @apply p-5;
+  /* @apply p-5; */
   background-color: rgba(199, 199, 199, 0.8); /* #C7C7C7 with 90% opacity */
 }
 
