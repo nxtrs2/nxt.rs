@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MusicPreview({ entry }: { entry: any }) {
   return (
-    <div className="space-y-2 md:max-w-[490px]">
+    <div className="space-y-2 md:max-w-[485px]">
       <Link
         href={`/music/${entry.id}`}
         className=" block hover:opacity-80 transition-opacity"

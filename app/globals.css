@@ -40,14 +40,25 @@ p {
   margin-bottom: 1.5rem;
 }
 
+p a {
+  text-decoration: underline dotted;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
 .bg-image {
-  background-image: url("/images/light-bg.png");
+  background-image: url("/images/light-bg1.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
 }
 
 .dark .bg-image {
-  background-image: url("/images/dark-bg.png");
+  background-image: url("/images/dark-bg1.jpg");
 }
 
 /* Content background styles */

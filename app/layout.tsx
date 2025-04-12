@@ -43,9 +43,9 @@ export default function RootLayout({
               
               <Navigation />
             </div> */}
-            <div className="fixed bottom-0 left-0 right-0 z-0 w-full">
+            {/* <div className="fixed bottom-0 left-0 right-0 z-0 w-full">
               <div className=" w-full h-auto max-w-[800px] mx-auto" />
-            </div>
+            </div> */}
             <FloatingPixels />
           </div>
         </ThemeProvider>

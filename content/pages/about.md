@@ -2,7 +2,7 @@
 title: About
 ---
 
-NXTRS is the blog and portfolio of software engineer, hobbyist musician and mediocre writer, Simon.
+NXTRS is the blog and portfolio of Simon. A software engineer by training, a musician by accident and writer of mediocre talent.
 
 # So, what is NXTRS?
 
@@ -12,6 +12,6 @@ When I entered my name it produced the letters NXTRS. You can try the cipher [he
 
 So anyway, here's a photo of me with my first computer, an IBM Compatible XT computer. It had GWBasic on which I learned to write bad code.
 
-![NXTRS](/images/nxtrs.png)
+![NXTRS](/images/nxtrs.jpg)
 
 Let's add placeholder images for the background:

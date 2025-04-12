@@ -67,7 +67,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
 
         // We can't directly create a Next.js Image component here,
         // so we'll use a placeholder and style it
-        wrapper.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" class="object-cover w-full h-full rounded pixelated-border" />`;
+        wrapper.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" class="object-cover w-full h-full" />`;
 
         img.parentNode?.replaceChild(wrapper, img);
       });
