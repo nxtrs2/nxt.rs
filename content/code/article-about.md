@@ -1,5 +1,5 @@
 ---
-title: Article on Coding Title
+title: Some Article Here
 image: /images/code-sample.png
 link: https://github.com/example/repo
 images:

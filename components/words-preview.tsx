@@ -1,6 +1,11 @@
 import Link from "next/link";
+import type { ContentItem } from "@/types/content";
 
-export default function WordsPreview({ entry }: { entry: any }) {
+interface WordsPreviewProps {
+  entry: ContentItem;
+}
+
+export default function WordsPreview({ entry }: WordsPreviewProps) {
   return (
     <div className="space-y-2  md:max-w-[485px]">
       <Link

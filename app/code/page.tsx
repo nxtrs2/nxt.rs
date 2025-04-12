@@ -2,9 +2,10 @@ import { getAllMarkdownFiles } from "@/lib/markdown";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/utils";
+import type { CodeContent } from "@/types/content";
 
 export default async function CodePage() {
-  const entries = await getAllMarkdownFiles("code");
+  const entries = await getAllMarkdownFiles<CodeContent>("code");
 
   return (
     <div className="space-y-2 md:max-w-[490px] ">

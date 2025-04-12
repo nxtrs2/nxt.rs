@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ContentItem } from "@/types/content";
 
-export default function MusicPreview({ entry }: { entry: any }) {
+interface MusicPreviewProps {
+  entry: ContentItem;
+}
+
+export default function MusicPreview({ entry }: MusicPreviewProps) {
   return (
     <div className="space-y-2 md:max-w-[485px]">
       <Link

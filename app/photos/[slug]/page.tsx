@@ -1,17 +1,22 @@
-import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown"
-import Image from "next/image"
-import { formatDate } from "@/lib/utils"
+import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
+import Image from "next/image";
+import { formatDate } from "@/lib/utils";
+import type { PhotoGallery } from "@/types/content";
 
 export async function generateStaticParams() {
-  const galleries = await getAllMarkdownFiles("photos")
+  const galleries = await getAllMarkdownFiles<PhotoGallery>("photos");
 
   return galleries.map((gallery) => ({
     slug: gallery.id,
-  }))
+  }));
 }
 
-export default async function PhotoGallery({ params }: { params: { slug: string } }) {
-  const gallery = await getMarkdownData("photos", params.slug)
+export default async function PhotoGalleryPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const gallery = await getMarkdownData<PhotoGallery>("photos", params.slug);
 
   return (
     <div className="space-y-6 pb-24">
@@ -37,17 +42,19 @@ export default async function PhotoGallery({ params }: { params: { slug: string 
 
       {gallery.images && gallery.images.length > 0 && (
         <div className="space-y-8 my-8">
-          {gallery.images.map((img: { url: string; caption: string }, idx: number) => (
+          {gallery.images.map((img, idx) => (
             <div key={idx} className="space-y-2">
               <Image
-                src={img.url || "/placeholder.svg"}
+                src={img.url || "/placeholder.svg?height=600&width=800"}
                 alt={img.caption || `Image ${idx + 1}`}
                 width={800}
                 height={600}
                 className="object-cover w-full"
               />
               {img.caption && (
-                <p className="text-sm text-center text-gray-600 dark:text-gray-400 italic">{img.caption}</p>
+                <p className="text-sm text-center text-gray-600 dark:text-gray-400 italic">
+                  {img.caption}
+                </p>
               )}
             </div>
           ))}
@@ -59,5 +66,5 @@ export default async function PhotoGallery({ params }: { params: { slug: string 
         {gallery.updated && <p>Updated: {formatDate(gallery.updated)}</p>}
       </div>
     </div>
-  )
+  );
 }

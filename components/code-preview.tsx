@@ -1,6 +1,11 @@
 import Link from "next/link";
+import type { ContentItem } from "@/types/content";
 
-export default function CodePreview({ entry }: { entry: any }) {
+interface CodePreviewProps {
+  entry: ContentItem;
+}
+
+export default function CodePreview({ entry }: CodePreviewProps) {
   return (
     <div className="space-y-2 md:max-w-[485px]">
       <Link

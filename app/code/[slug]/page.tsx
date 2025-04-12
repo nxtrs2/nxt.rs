@@ -2,9 +2,10 @@ import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
 import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "@/lib/utils";
+import type { CodeContent } from "@/types/content";
 
 export async function generateStaticParams() {
-  const entries = await getAllMarkdownFiles("code");
+  const entries = await getAllMarkdownFiles<CodeContent>("code");
 
   return entries.map((entry) => ({
     slug: entry.id,
@@ -16,7 +17,7 @@ export default async function CodeEntry({
 }: {
   params: { slug: string };
 }) {
-  const entry = await getMarkdownData("code", params.slug);
+  const entry = await getMarkdownData<CodeContent>("code", params.slug);
 
   return (
     <div className="p-3 content-bg space-y-6 md:max-w-[490px] dark:bg-black dark:bg-opacity-60">
