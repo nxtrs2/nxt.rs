@@ -44,7 +44,7 @@ p a {
   text-decoration: underline dotted;
   color: black;
   background-color: white;
-  font-weight: bold;
+  padding: 0 0.3rem;
 }
 
 p a:hover {

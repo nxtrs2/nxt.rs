@@ -58,16 +58,16 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-heading mb-6">
+    <div className="p-3 content-bg space-y-6 md:max-w-[485px] dark:bg-black dark:bg-opacity-60 mb-20">
+      <h1 className="text-2xl font-heading mb-6">
         Speak &amp; Spell Caesar Cipher
-      </h2>
+      </h1>
       <div className="grid gap-6">
-        <p className="font-mono mb-2">Enter your text below and click "=":</p>
+        <p className="mb-2">Enter your text below and click "=":</p>
       </div>{" "}
-      <div className="grid grid-cols-3 gap-6 m-4 border-2 p-10 rounded border-green-500">
+      <div className="grid grid-cols-3 gap-6 m-4 border-2 p-3  rounded border-gray-500">
         <input
-          className="border-2 border-gray-300 rounded p-2 text-gray-900 font-mono"
+          className="border-2 border-gray-300  p-2 font-mono"
           type="text"
           maxLength={20}
           value={inputText}
@@ -75,21 +75,22 @@ const Home = () => {
           placeholder="Enter your text here"
         />
         <button
+          disabled={!inputText}
           onClick={applyCipher}
-          className="py-2 pixelated-button bg-green-400 rounded text-gray-900 hover:bg-green-500 transition-colors"
+          className="py-2 bg-gray-600 rounded text-white disabled:border disabled:bg-transparent hover:bg-gray-500 transition-colors"
         >
           =
         </button>
-        <div className="flex font-mono text-2xl" style={{ fontWeight: "bold" }}>
+        <div className="flex font-mono text-xl" style={{ fontWeight: "bold" }}>
           {result ? result : "????"}
         </div>
       </div>{" "}
       <h2 className="text-2xl font-heading mb-6">How it works</h2>
       <div className="grid gap-6">
-        <p className="font-mono  mb-2">
+        <p className="mb-2 leading-relaxed">
           The cipher works by transforming letters in the following way:
         </p>
-        <p className="font-mono  mb-2">
+        <p className="mb-2 leading-relaxed">
           This substitution cipher divides the alphabet into two distinct
           groups—letters A–F and letters G–Z—and then reverses the order of the
           letters within each group. In the first group, the transformation maps
@@ -102,7 +103,7 @@ const Home = () => {
           translated into their respective reversed versions, while any
           non-alphabet characters remain unchanged.{" "}
         </p>
-        <p className="font-mono mb-2">
+        <p className="mb-2 leading-relaxed">
           Unlike a traditional Caesar cipher—which uniformly shifts each
           character by a fixed number of positions—this cipher’s unique approach
           of splitting the alphabet into two segments makes it cooler. By

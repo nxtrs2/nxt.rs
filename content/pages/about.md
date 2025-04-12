@@ -13,5 +13,3 @@ When I entered my name it produced the letters NXTRS. You can try the cipher [he
 So anyway, here's a photo of me with my first computer, an IBM Compatible XT computer. It had GWBasic on which I learned to write bad code.
 
 ![NXTRS](/images/nxtrs.jpg)
-
-Let's add placeholder images for the background:

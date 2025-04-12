@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="bg-black">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

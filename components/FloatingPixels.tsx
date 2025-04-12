@@ -32,6 +32,15 @@ const FloatingPixels: React.FC = () => {
     };
 
     createPixels();
+    // const animatePixels = () => {
+    //   setPixels((prevPixels) =>
+    //     prevPixels.map((pixel) => ({
+    //       ...pixel,
+    //       y: pixel.y + (Math.random() > 0.5 ? pixel.speed : -pixel.speed),
+    //       x: pixel.x + Math.sin(pixel.y * 0.1) * 0.5,
+    //     }))
+    //   );
+    // };
 
     const animatePixels = () => {
       setPixels((prevPixels) =>
