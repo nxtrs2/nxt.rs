@@ -8,7 +8,7 @@ interface MusicPreviewProps {
 
 export default function MusicPreview({ entry }: MusicPreviewProps) {
   return (
-    <div className="space-y-2 md:max-w-[485px]">
+    <div className="space-y-2 md:max-w-[475px]">
       <Link
         href={`/music/${entry.id}`}
         className=" block hover:opacity-80 transition-opacity"

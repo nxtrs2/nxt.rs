@@ -8,8 +8,8 @@ export default async function CodePage() {
   const entries = await getAllMarkdownFiles<CodeContent>("code");
 
   return (
-    <div className="space-y-2 md:max-w-[490px] ">
-      <h1 className="dark:bg-black dark:bg-opacity-60 font-roboto-slab text-2xl font-normal content-bg px-3 py-2">
+    <div className="space-y-2 md:max-w-[475px] ">
+      <h1 className="content-bg inline-block py-1 px-3 font-roboto-slab text-2xl font-normal">
         Code
       </h1>
 
@@ -24,7 +24,7 @@ export default async function CodePage() {
                 {entry.title}
               </h2>
               <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
-                {entry.image && (
+                {/* {entry.image && (
                   <div className="mt-2 mb-2">
                     <Image
                       src={entry.image || "/placeholder.svg"}
@@ -34,7 +34,7 @@ export default async function CodePage() {
                       className="object-cover w-full"
                     />
                   </div>
-                )}
+                )} */}
                 <div
                   className="mt-2 prose prose-sm dark:prose-invert"
                   dangerouslySetInnerHTML={{
@@ -42,7 +42,7 @@ export default async function CodePage() {
                   }}
                 />
                 {entry.created && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="m-0 text-sm text-gray-500 dark:text-gray-400 mt-2">
                     {formatDate(entry.created)}
                   </p>
                 )}

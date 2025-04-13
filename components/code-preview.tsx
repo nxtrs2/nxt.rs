@@ -7,7 +7,7 @@ interface CodePreviewProps {
 
 export default function CodePreview({ entry }: CodePreviewProps) {
   return (
-    <div className="space-y-2 md:max-w-[485px]">
+    <div className="space-y-2 md:max-w-[475px]">
       <Link
         href={`/code/${entry.id}`}
         className="block hover:opacity-80 transition-opacity"

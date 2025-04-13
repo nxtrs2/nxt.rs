@@ -7,7 +7,7 @@ interface WordsPreviewProps {
 
 export default function WordsPreview({ entry }: WordsPreviewProps) {
   return (
-    <div className="space-y-2  md:max-w-[485px]">
+    <div className="space-y-2  md:max-w-[475px]">
       <Link
         href={`/words/${entry.id}`}
         className="block hover:opacity-80 transition-opacity"

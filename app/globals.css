@@ -52,13 +52,13 @@ p a:hover {
 }
 
 .bg-image {
-  background-image: url("/images/light-bg1.jpg");
+  background-image: url("/images/light-bg2.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
 }
 
 .dark .bg-image {
-  background-image: url("/images/dark-bg1.jpg");
+  background-image: url("/images/dark-bg2.jpg");
 }
 
 /* Content background styles */
@@ -70,5 +70,6 @@ p a:hover {
 @media (max-width: 768px) {
   .bg-image {
     background-size: cover;
+    background-position: bottom left;
   }
 }

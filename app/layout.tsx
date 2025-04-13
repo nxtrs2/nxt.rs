@@ -29,7 +29,7 @@ export default function RootLayout({
               <div className="p-4 md:p-6">
                 <Logo />
 
-                <div className="lg:ml-[100px]">{children}</div>
+                <div className="lg:ml-[250px]">{children}</div>
               </div>
 
               <Navigation />

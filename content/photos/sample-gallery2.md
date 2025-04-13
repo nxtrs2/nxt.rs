@@ -1,5 +1,5 @@
 ---
-title: Photo Gallery2 Title
+title: Photo Gallery Title
 description: A collection of beautiful landscape photos
 heroImage: /images/gallery-hero.png
 images:
