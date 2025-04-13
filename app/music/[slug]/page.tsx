@@ -10,12 +10,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function MusicEntry({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const entry = await getMarkdownData<MusicContent>("music", params.slug);
+type Params = Promise<{ slug: string }>;
+
+export default async function MusicEntry(props: { params: Params }) {
+  const params = props.params;
+  const slug = (await params).slug;
+  const entry = await getMarkdownData<MusicContent>("music", slug);
 
   return (
     <div className="space-y-2 md:max-w-[475px] ">

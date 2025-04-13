@@ -1,21 +1,35 @@
-import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown"
-import Image from "next/image"
-import { formatDate } from "@/lib/utils"
+import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
+import Image from "next/image";
+import Link from "next/link";
+import { formatDate } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react";
+import type { WordsContent } from "@/types/content";
 
 export async function generateStaticParams() {
-  const entries = await getAllMarkdownFiles("words")
+  const entries = await getAllMarkdownFiles<WordsContent>("words");
 
   return entries.map((entry) => ({
     slug: entry.id,
-  }))
+  }));
 }
 
-export default async function WordEntry({ params }: { params: { slug: string } }) {
-  const entry = await getMarkdownData("words", params.slug)
+type Params = Promise<{ slug: string }>;
+
+export default async function WordEntry(props: { params: Params }) {
+  const params = props.params;
+  const slug = (await params).slug;
+  const entry = await getMarkdownData<WordsContent>("words", slug);
 
   return (
-    <div className="space-y-6 pb-24">
-      <h1 className="font-roboto-slab text-2xl font-normal">{entry.title}</h1>
+    <div className="space-y-2 md:max-w-[475px] mb-32 ">
+      <div className="flex items-center justify-between">
+        <h1 className="inline-block py-1 px-3 font-roboto-slab text-2xl font-normal content-bg dark:bg-black dark:bg-opacity-60">
+          {entry.title}
+        </h1>
+        <Link href={`/words/`} className="text-sm ml-2">
+          <ArrowLeft className="h-8 w-8" />
+        </Link>
+      </div>
 
       {entry.heroImage && (
         <div className="my-4">
@@ -29,12 +43,19 @@ export default async function WordEntry({ params }: { params: { slug: string } }
         </div>
       )}
 
-      <div className="prose prose-sm dark:prose-invert" dangerouslySetInnerHTML={{ __html: entry.contentHtml }} />
+      <div
+        className="prose prose-sm dark:prose-invert content-bg p-2 dark:bg-black dark:bg-opacity-60"
+        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
+      />
 
       <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
-        {entry.created && <p>Created: {formatDate(entry.created)}</p>}
-        {entry.updated && <p>Updated: {formatDate(entry.updated)}</p>}
+        {entry.created && (
+          <p className="mb-0">Created: {formatDate(entry.created)}</p>
+        )}
+        {entry.updated && (
+          <p className="mb-0">Updated: {formatDate(entry.updated)}</p>
+        )}
       </div>
     </div>
-  )
+  );
 }
