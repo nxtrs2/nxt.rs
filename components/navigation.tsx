@@ -21,7 +21,7 @@ export default function Navigation() {
     <div className="fixed inset-x-0 bottom-0 flex justify-center md:me-8 md:mb-1 m-0">
       <div className="w-full max-w-[1024px]">
         <nav className="p-4">
-          <div className="p-2 flex md:flex-col gap-3 bg-black bg-opacity-20 md:bg-transparent md:gap-0 items-center md:items-end flex-wrap justify-center">
+          <div className="p-2 flex md:flex-col gap-3 bg-black bg-opacity-20 dark:bg-opacity-80 md:bg-transparent md:gap-0 items-center md:items-end flex-wrap justify-center">
             {links.map((link) => (
               <Link
                 key={link.href}

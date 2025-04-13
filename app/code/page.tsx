@@ -8,8 +8,8 @@ export default async function CodePage() {
   const entries = await getAllMarkdownFiles<CodeContent>("code");
 
   return (
-    <div className="space-y-2 md:max-w-[475px] ">
-      <h1 className="content-bg inline-block py-1 px-3 font-roboto-slab text-2xl font-normal">
+    <div className="space-y-2 md:max-w-[475px] mb-32 m:mb-0">
+      <h1 className="font-roboto-slab text-2xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
         Code
       </h1>
 

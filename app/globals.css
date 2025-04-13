@@ -69,7 +69,11 @@ p a:hover {
 
 @media (max-width: 768px) {
   .bg-image {
-    background-size: cover;
+    background-image: url("/images/light-bg-mob.jpg");
+    background-position: bottom left;
+  }
+  .dark .bg-image {
+    background-image: url("/images/dark-bg-mob.jpg");
     background-position: bottom left;
   }
 }

@@ -13,17 +13,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function CodeEntry({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const entry = await getMarkdownData<CodeContent>("code", params.slug);
+type Params = Promise<{ slug: string }>;
+
+export default async function CodeEntry(props: { params: Params }) {
+  const params = props.params;
+  const slug = (await params).slug;
+  const entry = await getMarkdownData<CodeContent>("code", slug);
 
   return (
-    <div className="p-3 mb-20  space-y-6 md:max-w-[475px] dark:bg-black dark:bg-opacity-60">
+    <div className="space-y-2 md:max-w-[475px] mb-32 ">
       <div className="flex items-center justify-between">
-        <h1 className="content-bg inline-block py-1 px-3 font-roboto-slab text-2xl font-normal">
+        <h1 className="inline-block py-1 px-3 font-roboto-slab text-2xl font-normal content-bg dark:bg-black dark:bg-opacity-60">
           {entry.title}
         </h1>{" "}
         <Link href={`/code/`} className="text-sm ml-2">
@@ -38,13 +38,14 @@ export default async function CodeEntry({
             alt={entry.title}
             width={800}
             height={400}
+            priority
             className="object-cover w-full"
           />
         </div>
       )}
 
       <div
-        className="content-bg inline-block  py-1 px-3 prose prose-sm dark:prose-invert"
+        className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
         dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
       />
 
@@ -63,7 +64,7 @@ export default async function CodeEntry({
 
       {entry.images && entry.images.length > 0 && (
         <div className="my-6">
-          <h2 className="content-bg inline-block  py-1 px-3 font-roboto-slab text-xl font-normal mb-4">
+          <h2 className="content-bg inline-block  py-1 px-3 font-roboto-slab text-xl font-normal mb-4 dark:bg-black dark:bg-opacity-60">
             Screens
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

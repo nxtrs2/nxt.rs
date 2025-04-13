@@ -11,20 +11,22 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PhotoGalleryPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const gallery = await getMarkdownData<PhotoGallery>("photos", params.slug);
+type Params = Promise<{ slug: string }>;
+
+export default async function PhotoGalleryPage(props: { params: Params }) {
+  const params = props.params;
+  const slug = (await params).slug;
+  const gallery = await getMarkdownData<PhotoGallery>("photos", slug);
 
   return (
-    <div className="space-y-6 pb-24">
-      <h1 className="font-roboto-slab text-2xl font-normal">{gallery.title}</h1>
+    <div className="space-y-8 pb-24 md:max-w-[475px] max-h-[1000px] overflow-auto">
+      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+        {gallery.title}
+      </h1>
 
       {gallery.description && (
-        <div className="prose prose-sm dark:prose-invert">
-          <p>{gallery.description}</p>
+        <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
+          <p className="mb-0">{gallery.description}</p>
         </div>
       )}
 
@@ -52,7 +54,7 @@ export default async function PhotoGalleryPage({
                 className="object-cover w-full"
               />
               {img.caption && (
-                <p className="text-sm text-center text-gray-600 dark:text-gray-400 italic">
+                <p className="text-sm text-center content-bg italic dark:bg-black dark:bg-opacity-60">
                   {img.caption}
                 </p>
               )}

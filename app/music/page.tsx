@@ -1,13 +1,14 @@
 import { getAllMarkdownFiles } from "@/lib/markdown";
 import Link from "next/link";
 import Image from "next/image";
+import type { MusicContent } from "@/types/content";
 
 export default async function MusicPage() {
-  const entries = await getAllMarkdownFiles("music");
+  const entries = await getAllMarkdownFiles<MusicContent>("music");
 
   return (
-    <div className="p-3 mb-20  space-y-6 md:max-w-[475px] dark:bg-black dark:bg-opacity-60">
-      <h1 className="content-bg inline-block py-1 px-3 font-roboto-slab text-2xl font-normal">
+    <div className="space-y-2 md:max-w-[475px] ">
+      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
         Music
       </h1>
 
@@ -15,7 +16,7 @@ export default async function MusicPage() {
         {entries.map((entry) => (
           <div
             key={entry.id}
-            className="space-y-2 content-bg p-3 font-roboto-slab prose prose-sm dark:prose-invert"
+            className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
           >
             <Link
               href={`/music/${entry.id}`}

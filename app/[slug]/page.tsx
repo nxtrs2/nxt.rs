@@ -31,7 +31,7 @@ export default async function Page(props: { params: Params }) {
   const page = await getMarkdownData<PageContent>("pages", slug);
 
   return (
-    <div className="p-3 content-bg space-y-6 md:max-w-[485px] dark:bg-black dark:bg-opacity-60 mb-20">
+    <div className="p-3 content-bg space-y-6 md:max-w-[475px] dark:bg-black dark:bg-opacity-60 mb-20">
       <h1 className="font-roboto-slab text-2xl font-normal">{page.title}</h1>
 
       {/* <div
