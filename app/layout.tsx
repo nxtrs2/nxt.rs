@@ -4,11 +4,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navigation from "@/components/navigation";
 import Logo from "@/components/logo";
 import FloatingPixels from "@/components/FloatingPixels";
+import { baseMetadata } from "./metadata";
 
-export const metadata = {
-  title: "NXTRS",
-  description: "Personal blog and portfolio",
-};
+export const metadata = baseMetadata;
 
 export default function RootLayout({
   children,
