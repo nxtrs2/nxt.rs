@@ -21,7 +21,7 @@ export default async function WordEntry(props: { params: Params }) {
   const entry = await getMarkdownData<WordsContent>("words", slug);
 
   return (
-    <div className="space-y-2 md:max-w-[475px] mb-32 ">
+    <div className="space-y-2 mb-32 md:mb-0  ">
       <div className="flex items-center justify-between">
         <h1 className="inline-block py-1 px-3 font-roboto-slab text-2xl font-normal content-bg dark:bg-black dark:bg-opacity-60">
           {entry.title}
@@ -45,17 +45,18 @@ export default async function WordEntry(props: { params: Params }) {
 
       <div
         className="prose prose-sm dark:prose-invert content-bg p-2 dark:bg-black dark:bg-opacity-60"
+        style={{ maxHeight: "800px", overflowY: "auto" }}
         dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
       />
 
-      <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
+      {/* <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
         {entry.created && (
           <p className="mb-0">Created: {formatDate(entry.created)}</p>
         )}
         {entry.updated && (
           <p className="mb-0">Updated: {formatDate(entry.updated)}</p>
         )}
-      </div>
+      </div> */}}
     </div>
   );
 }

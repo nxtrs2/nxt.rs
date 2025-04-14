@@ -18,6 +18,7 @@ export interface MusicContent extends BaseContent {
   isAlbum: boolean;
   description?: string;
   coverImage?: string;
+
   tracks?: string[];
 }
 
@@ -25,6 +26,7 @@ export interface MusicContent extends BaseContent {
 export interface PhotoGallery extends BaseContent {
   description?: string;
   heroImage?: string;
+
   images?: {
     url: string;
     caption?: string;

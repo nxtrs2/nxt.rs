@@ -2,24 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ContentItem } from "@/types/content";
 
-interface MusicPreviewProps {
+interface GalleryPreviewProps {
   entry: ContentItem;
 }
 
-export default function MusicPreview({ entry }: MusicPreviewProps) {
+export default function GalleryPreview({ entry }: GalleryPreviewProps) {
   return (
     <div className="relative">
       <div className="absolute top-0 left-0 bg-black text-white p-1 text-sm">
-        MUSIC
+        PHOTOS
       </div>
       <Link
-        href={`/music/${entry.id}`}
+        href={`/photos/${entry.id}`}
         className=" block hover:opacity-80 transition-opacity"
       >
-        {entry.coverImage && (
+        {entry.heroImage && (
           <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px]">
             <Image
-              src={entry.coverImage || "/placeholder.svg"}
+              src={entry.heroImage || "/placeholder.svg"}
               alt={entry.title}
               width={600}
               height={200}

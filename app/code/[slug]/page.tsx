@@ -21,7 +21,7 @@ export default async function CodeEntry(props: { params: Params }) {
   const entry = await getMarkdownData<CodeContent>("code", slug);
 
   return (
-    <div className="space-y-2 md:max-w-[475px] mb-32 ">
+    <div className="space-y-2 mb-32 md:mb-0  ">
       <div className="flex items-center justify-between">
         <h1 className="inline-block py-1 px-3 font-roboto-slab text-2xl font-normal content-bg dark:bg-black dark:bg-opacity-60">
           {entry.title}
@@ -31,42 +31,8 @@ export default async function CodeEntry(props: { params: Params }) {
         </Link>
       </div>
 
-      {entry.image && (
-        <div className="my-4">
-          <Image
-            src={entry.image || "/placeholder.svg"}
-            alt={entry.title}
-            width={800}
-            height={400}
-            priority
-            className="object-cover w-full"
-          />
-        </div>
-      )}
-
-      <div
-        className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
-        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
-      />
-
-      {entry.link && (
-        <p className="my-4">
-          <Link
-            href={entry.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className=""
-          >
-            View Project
-          </Link>
-        </p>
-      )}
-
       {entry.images && entry.images.length > 0 && (
         <div className="my-6">
-          <h2 className="content-bg inline-block  py-1 px-3 font-roboto-slab text-xl font-normal mb-4 dark:bg-black dark:bg-opacity-60">
-            Screens
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {entry.images.map((img: string, idx: number) => (
               <div key={idx} className="overflow-hidden">
@@ -83,14 +49,33 @@ export default async function CodeEntry(props: { params: Params }) {
         </div>
       )}
 
-      <div className="flex justify-between text-sm text-gray-200 dark:text-gray-400 mt-6">
+      <div
+        className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
+        style={{ maxHeight: "800px", overflowY: "auto" }}
+        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
+      />
+
+      {entry.link && (
+        <p className="my-4">
+          <Link
+            href={entry.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            View Project
+          </Link>
+        </p>
+      )}
+
+      {/* <div className="flex justify-between text-sm text-gray-200 dark:text-gray-400 mt-6">
         {entry.created && (
           <p className="m-0">Created: {formatDate(entry.created)}</p>
         )}
         {entry.updated && (
           <p className="m-0">Updated: {formatDate(entry.updated)}</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

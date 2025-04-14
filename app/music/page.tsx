@@ -7,33 +7,33 @@ export default async function MusicPage() {
   const entries = await getAllMarkdownFiles<MusicContent>("music");
 
   return (
-    <div className="space-y-2 md:max-w-[475px] ">
+    <div className="space-y-2 mb-32 m:mb-0 ">
       <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
         Music
       </h1>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
         {entries.map((entry) => (
-          <div
-            key={entry.id}
-            className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
-          >
+          <div key={entry.id}>
             <Link
               href={`/music/${entry.id}`}
               className="block hover:opacity-80 transition-opacity"
             >
-              <div className="flex items-start space-x-4">
-                {entry.coverImage && (
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={entry.coverImage || "/placeholder.svg"}
-                      alt={entry.title}
-                      width={120}
-                      height={120}
-                      className="object-cover"
-                    />
-                  </div>
-                )}
+              {entry.coverImage && (
+                <div className="flex-shrink-0">
+                  <Image
+                    src={entry.coverImage || "/placeholder.svg"}
+                    alt={entry.title}
+                    width={400}
+                    height={120}
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div
+                key={entry.id}
+                className="content-bg  prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
+              >
                 <div>
                   <h2 className="font-roboto-slab text-xl font-normal">
                     {entry.title}
@@ -42,7 +42,7 @@ export default async function MusicPage() {
                     {entry.isAlbum ? "Album" : "Track"}
                   </p>
                   {entry.description && (
-                    <p className="text-sm mt-2 mb-0">
+                    <p className="text-sm mt-2 mb-0 hidden md:block">
                       {entry.description.substring(0, 100)}...
                     </p>
                   )}

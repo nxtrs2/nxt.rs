@@ -8,19 +8,19 @@ export default async function PhotosPage() {
   const galleries = await getAllMarkdownFiles<PhotoGallery>("photos");
 
   return (
-    <div className="space-y-8 pb-24 md:max-w-[475px]">
+    <div className="space-y-8 pb-24">
       <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
         Photos
       </h1>
 
-      <div className="grid grid-cols-2 max-h-[1000px] overflow-y-auto gap-4 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid grid-cols-2 max-h-[1000px] overflow-y-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
         {galleries.map((gallery) => (
           <Link
             key={gallery.id}
             href={`/photos/${gallery.id}`}
-            className="block hover:opacity-80 transition-opacity mb-8"
+            className="block hover:opacity-80 transition-opacity "
           >
-            <div className="space-y-2">
+            <div className="">
               {gallery.heroImage && (
                 <Image
                   src={gallery.heroImage || "/placeholder.svg"}
@@ -30,7 +30,7 @@ export default async function PhotosPage() {
                   className="object-cover w-full h-48"
                 />
               )}
-              <h2 className="py-1 px-3 dark:opacity-35 font-roboto-slab md:text-lg font-normal content-bg  dark:bg-black dark:bg-opacity-60">
+              <h2 className="py-3 px-1 dark:opacity-55 font-roboto-slab font-normal content-bg  dark:bg-black dark:bg-opacity-60">
                 {gallery.title}
               </h2>
               {/* {gallery.created && (
