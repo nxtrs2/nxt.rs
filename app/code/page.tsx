@@ -16,18 +16,15 @@ export default async function CodePage() {
       <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
         {entries.map((entry) => (
           <div key={entry.id} className="space-y-2 pb-2">
-            <Link
-              href={`/code/${entry.id}`}
-              className="block hover:opacity-80 transition-opacity"
-            >
+            <Link href={`/code/${entry.id}`} className="block">
               {entry.image && (
-                <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px]">
+                <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
                   <Image
                     src={entry.image || "/placeholder.svg"}
                     alt={entry.title}
                     width={800}
                     height={400}
-                    className="object-cover w-full"
+                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               )}

@@ -15,18 +15,17 @@ export default async function WordsPage() {
       <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
         {entries.map((entry) => (
           <div key={entry.id} className="space-y-2">
-            <Link
-              href={`/words/${entry.id}`}
-              className="block hover:opacity-80 transition-opacity"
-            >
+            <Link href={`/words/${entry.id}`} className="block">
               {entry.heroImage && (
-                <Image
-                  src={entry.heroImage || "/placeholder.svg"}
-                  alt={entry.title}
-                  width={800}
-                  height={400}
-                  className="object-cover w-full h-48"
-                />
+                <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
+                  <Image
+                    src={entry.heroImage || "/placeholder.svg"}
+                    alt={entry.title}
+                    width={800}
+                    height={400}
+                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
               )}
               <div className="content-bg prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
                 <h2 className="font-roboto-slab md:text-xl font-normal py-1 inline-block dark:bg-black dark:bg-opacity-60">

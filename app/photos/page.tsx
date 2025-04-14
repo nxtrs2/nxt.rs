@@ -18,17 +18,19 @@ export default async function PhotosPage() {
           <Link
             key={gallery.id}
             href={`/photos/${gallery.id}`}
-            className="block hover:opacity-80 transition-opacity "
+            className="block"
           >
             <div className="">
               {gallery.heroImage && (
-                <Image
-                  src={gallery.heroImage || "/placeholder.svg"}
-                  alt={gallery.title}
-                  width={200}
-                  height={200}
-                  className="object-cover w-full h-48"
-                />
+                <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
+                  <Image
+                    src={gallery.heroImage || "/placeholder.svg"}
+                    alt={gallery.title}
+                    width={200}
+                    height={200}
+                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
+                  />{" "}
+                </div>
               )}
               <h2 className="py-3 px-1 dark:opacity-55 font-roboto-slab font-normal content-bg  dark:bg-black dark:bg-opacity-60">
                 {gallery.title}

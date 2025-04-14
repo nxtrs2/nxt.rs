@@ -15,18 +15,15 @@ export default async function MusicPage() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {entries.map((entry) => (
           <div key={entry.id}>
-            <Link
-              href={`/music/${entry.id}`}
-              className="block hover:opacity-80 transition-opacity"
-            >
+            <Link href={`/music/${entry.id}`} className="block">
               {entry.coverImage && (
-                <div className="flex-shrink-0">
+                <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
                   <Image
                     src={entry.coverImage || "/placeholder.svg"}
                     alt={entry.title}
                     width={400}
                     height={120}
-                    className="object-cover"
+                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               )}
