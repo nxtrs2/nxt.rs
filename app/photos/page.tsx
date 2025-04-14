@@ -8,7 +8,7 @@ export default async function PhotosPage() {
   const galleries = await getAllMarkdownFiles<PhotoGallery>("photos");
 
   return (
-    <div className="space-y-8 pb-24">
+    <div className="space-y-5 pb-24">
       <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
         Photos
       </h1>

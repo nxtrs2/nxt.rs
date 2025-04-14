@@ -31,7 +31,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
       // Style paragraphs
       const paragraphs = contentRef.current.querySelectorAll("p");
       paragraphs.forEach((p) => {
-        p.classList.add("my-3", "leading-relaxed");
+        p.classList.add("leading-relaxed");
       });
 
       // Style lists

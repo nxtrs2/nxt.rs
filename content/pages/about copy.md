@@ -10,4 +10,6 @@ Back in the late 80s my neighbours had a fancy toy called [Speak & Spell](<https
 
 When I entered my name it produced the letters NXTRS. You can try the cipher [here](/cipher).
 
-So that's the story of NXTRS.
+So that's the story of NXTRS. Also, below is a photo of me from the 80s having no clue that decades later I will be using those letters for something.
+
+![NXTRS](/images/nxtrs.jpg)

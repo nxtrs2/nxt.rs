@@ -1,6 +1,6 @@
 import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
 import Image from "next/image";
-import { formatDate } from "@/lib/utils";
+// import { formatDate } from "@/lib/utils";
 import type { PhotoGallery } from "@/types/content";
 
 export async function generateStaticParams() {
@@ -41,11 +41,11 @@ export default async function PhotoGalleryPage(props: { params: Params }) {
           />
         </div>
       )} */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-2 max-h-[1000px] overflow-y-auto gap-4 md:grid-cols-2 lg:grid-cols-3">
         {gallery.images && gallery.images.length > 0 && (
-          <div className="">
+          <>
             {gallery.images.map((img, idx) => (
-              <div key={idx} className="">
+              <div key={idx}>
                 <Image
                   src={img.url || "/placeholder.svg?height=600&width=800"}
                   alt={img.caption || `Image ${idx + 1}`}
@@ -59,14 +59,14 @@ export default async function PhotoGalleryPage(props: { params: Params }) {
                 )}
               </div>
             ))}
-          </div>
+          </>
         )}
       </div>
 
-      <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
+      {/* <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
         {gallery.created && <p>Created: {formatDate(gallery.created)}</p>}
         {gallery.updated && <p>Updated: {formatDate(gallery.updated)}</p>}
-      </div>
+      </div> */}
     </div>
   );
 }

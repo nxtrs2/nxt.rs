@@ -31,14 +31,18 @@ export default async function Page(props: { params: Params }) {
   const page = await getMarkdownData<PageContent>("pages", slug);
 
   return (
-    <div className="p-3 content-bg space-y-6 md:max-w-[475px] dark:bg-black dark:bg-opacity-60 mb-20">
-      <h1 className="font-roboto-slab text-2xl font-normal">{page.title}</h1>
+    <div className="space-y-6 pb-24">
+      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+        {page.title}
+      </h1>
 
       {/* <div
         className="prose prose-sm dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: page.contentHtml }}
       /> */}
-      <MarkdownContent content={page.contentHtml} />
+      <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
+        <MarkdownContent content={page.contentHtml} />
+      </div>
     </div>
   );
 }
