@@ -4,9 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const links = [
     { href: "/", label: "HOME" },
@@ -21,7 +24,21 @@ export default function Navigation() {
     <div className="fixed inset-x-0 bottom-0 flex justify-center md:me-8 md:mb-1 m-0">
       <div className="w-full max-w-[1024px]">
         <nav className="p-4">
-          <div className="p-2 flex md:flex-col gap-3 bg-black bg-opacity-20 dark:bg-opacity-80 md:bg-transparent md:gap-0 items-center md:items-end flex-wrap justify-center">
+          {/* Mobile Toggle Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden fixed bottom-4 right-4 w-12 h-12  bg-black text-white flex items-center justify-center shadow-lg z-50 dark:border"
+          >
+            {isOpen ? <X /> : <Menu className="h-6 w-6" />}
+          </button>
+
+          {/* Navigation Links */}
+          <div
+            className={cn(
+              "p-2 flex md:flex-col gap-3 bg-black bg-opacity-50 dark:bg-opacity-80 md:bg-transparent md:gap-0 items-center md:items-end flex-wrap justify-center transition-all",
+              isOpen ? "flex" : "hidden md:flex"
+            )}
+          >
             {links.map((link) => (
               <Link
                 key={link.href}
