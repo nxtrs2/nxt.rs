@@ -18,7 +18,8 @@ export interface MusicContent extends BaseContent {
   isAlbum: boolean;
   description?: string;
   coverImage?: string;
-
+  isSoundcloud: boolean;
+  songUrl: string;
   tracks?: string[];
 }
 

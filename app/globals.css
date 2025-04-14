@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Tinos&family=Roboto+Slab:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Tinos&family=Roboto+Slab:wght@100;400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,6 +14,12 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+}
+
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {

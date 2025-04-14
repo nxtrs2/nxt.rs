@@ -22,7 +22,7 @@ export default function GalleryPreview({ entry }: GalleryPreviewProps) {
               src={entry.heroImage || "/placeholder.svg"}
               alt={entry.title}
               width={600}
-              height={200}
+              height={600}
               className="object-cover content-bg dark:bg-black dark:bg-opacity-60"
             />
           </div>

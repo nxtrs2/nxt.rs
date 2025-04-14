@@ -12,7 +12,7 @@ export default async function MusicPage() {
         Music
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {entries.map((entry) => (
           <div key={entry.id}>
             <Link
@@ -35,12 +35,13 @@ export default async function MusicPage() {
                 className="content-bg  prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
               >
                 <div>
-                  <h2 className="font-roboto-slab text-xl font-normal">
+                  <h2 className="font-roboto-slab font-normal">
                     {entry.title}
                   </h2>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {/* <p className="text-sm text-gray-600 dark:text-gray-400">
                     {entry.isAlbum ? "Album" : "Track"}
                   </p>
+                 */}{" "}
                   {entry.description && (
                     <p className="text-sm mt-2 mb-0 hidden md:block">
                       {entry.description.substring(0, 100)}...

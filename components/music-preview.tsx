@@ -22,8 +22,8 @@ export default function MusicPreview({ entry }: MusicPreviewProps) {
               src={entry.coverImage || "/placeholder.svg"}
               alt={entry.title}
               width={600}
-              height={200}
-              className="object-cover content-bg dark:bg-black dark:bg-opacity-60"
+              height={600}
+              className=" dark:bg-black dark:bg-opacity-60"
             />
           </div>
         )}
