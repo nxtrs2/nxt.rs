@@ -4,6 +4,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import type { CodeContent } from "@/types/content";
 import { ArrowLeft } from "lucide-react";
+import MarkdownContent from "@/components/MarkDownContent";
 
 export async function generateStaticParams() {
   const entries = await getAllMarkdownFiles<CodeContent>("code");
@@ -30,12 +31,39 @@ export default async function CodeEntry(props: { params: Params }) {
           <ArrowLeft className="h-8 w-8" />
         </Link>
       </div>
-      <div
+      {entry.image && (
+        <div className="my-4">
+          <Image
+            src={entry.image || "/placeholder.svg"}
+            alt={entry.title}
+            width={800}
+            height={400}
+            className="object-cover w-full"
+          />
+        </div>
+      )}
+      {entry.link && (
+        <p className="my-4">
+          <strong>Check it out at: </strong>
+          <Link
+            href={entry.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            {entry.linkText || "View Code"}
+          </Link>
+        </p>
+      )}
+      <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
+        <MarkdownContent content={entry.contentHtml} />
+      </div>
+      {/* <div
         className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
         style={{ maxHeight: "800px", overflowY: "auto" }}
         dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
-      />
-      {entry.images && entry.images.length > 0 && (
+      /> */}
+      {/* {entry.images && entry.images.length > 0 && (
         <div className="my-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {entry.images.map((img: string, idx: number) => (
@@ -51,20 +79,7 @@ export default async function CodeEntry(props: { params: Params }) {
             ))}
           </div>
         </div>
-      )}
-
-      {entry.link && (
-        <p className="my-4">
-          <Link
-            href={entry.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className=""
-          >
-            View Project
-          </Link>
-        </p>
-      )}
+      )} */}
 
       {/* <div className="flex justify-between text-sm text-gray-200 dark:text-gray-400 mt-6">
         {entry.created && (

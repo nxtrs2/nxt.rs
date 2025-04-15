@@ -17,7 +17,7 @@ export default function CodePreview({ entry }: CodePreviewProps) {
         className="block hover:opacity-80 transition-opacity"
       >
         {entry.image && (
-          <div className="flex flex-row md:w-[100%] md:h-[100px] w-[100%] h-[180px] group overflow-hidden">
+          <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
             <Image
               src={entry.image || "/placeholder.svg"}
               alt={entry.title}

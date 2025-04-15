@@ -8,7 +8,9 @@ export interface BaseContent {
 
 // Code content type
 export interface CodeContent extends BaseContent {
+  description?: string;
   image?: string;
+  linkText?: string;
   link?: string;
   images?: string[];
 }

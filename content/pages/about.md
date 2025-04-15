@@ -11,3 +11,8 @@ Back in the late 80s my neighbours had a fancy toy called [Speak & Spell](<https
 When I entered my name it produced the letters NXTRS. You can try the cipher [here](/cipher).
 
 So that's the story of NXTRS.
+
+# Links
+
+- [My Code on Github](https://github.com/nxtrs2)
+- [My Music on Sound Cloud](https://soundcloud.com/nxtrsmusic)

@@ -37,7 +37,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
       // Style lists
       const lists = contentRef.current.querySelectorAll("ul, ol");
       lists.forEach((list) => {
-        list.classList.add("font-mono", "my-4", "ml-6");
+        list.classList.add("my-4", "ml-6", "mx-4");
 
         if (list.tagName === "UL") {
           list.classList.add("list-disc");
@@ -59,7 +59,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ content }) => {
 
         // Create a wrapper for the image to maintain aspect ratio
         const wrapper = document.createElement("div");
-        wrapper.classList.add("relative", "w-full", "h-64", "md:h-96", "my-6");
+        wrapper.classList.add("relative", "h-64", "md:h-96", "my-6");
 
         // Replace the img with a Next.js Image component
         const imgSrc = img.getAttribute("src") || "";

@@ -14,9 +14,9 @@ export default function Navigation() {
   const links = [
     { href: "/", label: "HOME" },
     { href: "/code", label: "CODE" },
-    { href: "/music", label: "MUSIC" },
-    { href: "/photos", label: "PHOTOS" },
-    { href: "/words", label: "WORDS" },
+    // { href: "/music", label: "MUSIC" },
+    // { href: "/photos", label: "PHOTOS" },
+    // { href: "/words", label: "WORDS" },
     { href: "/about", label: "ABOUT" },
   ];
 

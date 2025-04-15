@@ -32,17 +32,14 @@ export default async function CodePage() {
                 <h2 className="font-roboto-slab md:text-xl font-normal inline-block dark:bg-black dark:bg-opacity-60">
                   {entry.title}
                 </h2>
-                <div
-                  className="mt-2 prose prose-sm dark:prose-invert hidden md:block"
-                  dangerouslySetInnerHTML={{
-                    __html: entry.contentHtml.substring(0, 200) + "...",
-                  }}
-                />
-                {entry.created && (
+                <div className="mt-2 prose prose-sm dark:prose-invert hidden md:block">
+                  {entry.description}
+                </div>
+                {/* {entry.created && (
                   <p className="m-0 text-sm text-gray-500 dark:text-gray-400 ">
                     {formatDate(entry.created)}
                   </p>
-                )}
+                )} */}
               </div>
             </Link>
           </div>
