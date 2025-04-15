@@ -17,7 +17,7 @@ export default function MusicPreview({ entry }: MusicPreviewProps) {
         className=" block hover:opacity-80 transition-opacity"
       >
         {entry.coverImage && (
-          <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
+          <div className="flex flex-row md:w-[100%] md:h-[100px] w-[100%] h-[180px] group overflow-hidden">
             <Image
               src={entry.coverImage || "/placeholder.svg"}
               alt={entry.title}

@@ -14,12 +14,12 @@ export default function WordsPreview({ entry }: WordsPreviewProps) {
       </div>
       <Link href={`/words/${entry.id}`} className="block hover:opacity-80 ">
         {entry.heroImage && (
-          <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
+          <div className="flex flex-row md:w-[100%] md:h-[100px] w-[100%] h-[200px] group overflow-hidden">
             <Image
               src={entry.heroImage || "/placeholder.svg"}
               alt={entry.title}
               width={600}
-              height={300}
+              height={600}
               className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
             />
           </div>

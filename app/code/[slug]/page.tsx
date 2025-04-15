@@ -30,7 +30,11 @@ export default async function CodeEntry(props: { params: Params }) {
           <ArrowLeft className="h-8 w-8" />
         </Link>
       </div>
-
+      <div
+        className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
+        style={{ maxHeight: "800px", overflowY: "auto" }}
+        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
+      />
       {entry.images && entry.images.length > 0 && (
         <div className="my-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,12 +52,6 @@ export default async function CodeEntry(props: { params: Params }) {
           </div>
         </div>
       )}
-
-      <div
-        className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60"
-        style={{ maxHeight: "800px", overflowY: "auto" }}
-        dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
-      />
 
       {entry.link && (
         <p className="my-4">
