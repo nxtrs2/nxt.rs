@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { MusicContent } from "@/types/content";
+import MarkdownContent from "@/components/MarkDownContent";
 
 export async function generateStaticParams() {
   const entries = await getAllMarkdownFiles<MusicContent>("music");
@@ -76,14 +77,16 @@ export default async function MusicEntry(props: { params: Params }) {
               Your browser does not support the audio element.
             </audio>
           )}
-          <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-2 dark:bg-black dark:bg-opacity-60">
+          {/* <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-2 dark:bg-black dark:bg-opacity-60">
             {entry.description && (
               <div className="prose prose-sm dark:prose-invert">
                 <p>{entry.description}</p>
               </div>
             )}
+          </div> */}
+          <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
+            <MarkdownContent content={entry.contentHtml} />
           </div>
-
           {entry.tracks && (
             <div className="content-bg prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
               <h2 className="font-roboto-slab text-lg font-normal mb-2">

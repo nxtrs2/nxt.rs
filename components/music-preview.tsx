@@ -9,15 +9,15 @@ interface MusicPreviewProps {
 export default function MusicPreview({ entry }: MusicPreviewProps) {
   return (
     <div className="relative">
-      <div className="absolute top-0 left-0 bg-black text-white p-1 text-sm z-20">
+      {/* <div className="absolute top-0 left-0 bg-black text-white p-1 text-sm z-20">
         MUSIC
-      </div>
+      </div> */}
       <Link
         href={`/music/${entry.id}`}
         className=" block hover:opacity-80 transition-opacity"
       >
         {entry.coverImage && (
-          <div className="flex flex-row md:w-[100%] md:h-[100px] w-[100%] h-[180px] group overflow-hidden">
+          <div className="flex flex-row md:w-[100%] md:h-[200px] w-[100%] h-[180px] group overflow-hidden">
             <Image
               src={entry.coverImage || "/placeholder.svg"}
               alt={entry.title}

@@ -16,3 +16,7 @@ So that's the story of NXTRS.
 
 - [My Code on Github](https://github.com/nxtrs2)
 - [My Music on Sound Cloud](https://soundcloud.com/nxtrsmusic)
+
+# This Website
+
+It is NextJS using markdown files for content and hosted on netlify.
