@@ -10,6 +10,6 @@ updated: "2025-03-21"
 tracks:
 ---
 
-This track was recorded live on my phone on a typically quiet day around March or April of 2020 - during the start of the Covid pandemic - in Colombo, Sri Lanka. There was no central idea to begin with. I had only recently started "making" music; perhaps as a reaction to the pandemic, I don't know. I just sat down and after some fiddling around my fingers laid the notes. Still today, many years later, I still love this track and might include it on an album.
+This track started out while exploring synth sounds. At this point I had begun to really liked synth saw waves (still do) - leads and pads constructed from them. The interesting thing about this track is that the bass works like a pedal tone (staying in the same chord - just 2 notes) throughout the song but there are chord changes.
 
-The background drone was added later using an app called Shoom on my iPad - the mix was also done on my iPad using the AUM app.
+My [Session Flow](https://sessionflow.nxt.rs/) music practice app has this song as one of the demos.

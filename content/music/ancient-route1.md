@@ -10,4 +10,4 @@ updated: "2025-03-19"
 tracks:
 ---
 
-This was the very first track in my journey making music. This track did not start like as it is heard here. It begame during the intial months of the Covid pandemic. I will post the files from the initial ideas - I should have them somewhere.
+This was the first track I composed. It began during the intial months of the Covid pandemic. I was learning about scales and chord progressions at this point and I thought this scale (a harmonic minor) sounded interesting.
