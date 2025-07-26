@@ -4,6 +4,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import type { WordsContent } from "@/types/content";
+import MarkdownContent from "@/components/MarkDownContent";
 
 export async function generateStaticParams() {
   const entries = await getAllMarkdownFiles<WordsContent>("words");
@@ -43,11 +44,14 @@ export default async function WordEntry(props: { params: Params }) {
         </div>
       )}
 
-      <div
+      {/* <div
         className="prose prose-sm dark:prose-invert content-bg p-2 dark:bg-black dark:bg-opacity-60"
         style={{ maxHeight: "800px", overflowY: "auto" }}
         dangerouslySetInnerHTML={{ __html: entry.contentHtml }}
-      />
+      /> */}
+      <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
+        <MarkdownContent content={entry.contentHtml} />
+      </div>
 
       {/* <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-6">
         {entry.created && (
@@ -56,7 +60,7 @@ export default async function WordEntry(props: { params: Params }) {
         {entry.updated && (
           <p className="mb-0">Updated: {formatDate(entry.updated)}</p>
         )}
-      </div> */}}
+      </div> */}
     </div>
   );
 }

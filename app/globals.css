@@ -118,37 +118,33 @@ p a:hover {
   background-color: rgba(199, 199, 199, 0.8); /* #C7C7C7 with 90% opacity */
 }
 
+/* Mobile browsers fix - background-attachment: fixed doesn't work reliably on mobile */
 @media (max-width: 768px) {
   .bg-image {
-    background-image: url("/images/light-bg-mob.jpg");
-    background-position: bottom left;
-    background-attachment: fixed;
-    background-size: auto;
-    background-color: #000;
-  }
-  .dark .bg-image {
-    background-image: url("/images/dark-bg-mob.jpg");
-    background-position: bottom left;
-    background-attachment: fixed;
-    background-size: auto;
-    background-color: #000;
+    background: none !important;
+    position: relative;
   }
 
-  /* Safari/iOS WebKit fix for mobile */
-  @supports (-webkit-touch-callout: none) {
-    .bg-image::before {
-      background-image: url("/images/light-bg-mob.jpg");
-      background-position: bottom left;
-      background-repeat: no-repeat;
-      background-size: auto;
-      background-color: #000;
-    }
-    .dark .bg-image::before {
-      background-image: url("/images/dark-bg-mob.jpg");
-      background-position: bottom left;
-      background-repeat: no-repeat;
-      background-size: auto;
-      background-color: #000;
-    }
+  .bg-image::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/light-bg-mob.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #000;
+    z-index: -1;
+  }
+
+  .dark .bg-image::before {
+    background-image: url("/images/dark-bg-mob.jpg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #000;
   }
 }

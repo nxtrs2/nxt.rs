@@ -23,7 +23,7 @@ export default async function WordsPage() {
                     alt={entry.title}
                     width={800}
                     height={400}
-                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-300 group-hover:scale-110"
+                    className="object-cover content-bg dark:bg-black dark:bg-opacity-60 transform transition-transform duration-1000 group-hover:scale-110"
                   />
                 </div>
               )}
@@ -31,12 +31,12 @@ export default async function WordsPage() {
                 <h2 className="font-roboto-slab md:text-xl font-normal py-1 inline-block dark:bg-black dark:bg-opacity-60">
                   {entry.title}
                 </h2>{" "}
-                <div
+                {/* <div
                   className="mt-2 prose prose-sm dark:prose-invert hidden md:block"
                   dangerouslySetInnerHTML={{
                     __html: entry.contentHtml.substring(0, 200) + "...",
                   }}
-                />
+                /> */}
                 {entry.created && (
                   <p className="mb-0 text-sm text-gray-500 dark:text-gray-400 mt-2">
                     {formatDate(entry.created)}
