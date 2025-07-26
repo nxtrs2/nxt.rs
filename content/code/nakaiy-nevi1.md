@@ -16,6 +16,22 @@ This is the official iOS port of the Nakaiy Nevi app originally developed by [Sh
 
 "Nakaiy is a calendar system, a derivative from the Indus Valley Civilization, based on observations of subtle changes in the weather. Each Nakaiy is a 13-14 day period each with their own characteristics and weather pattern, based on the positions of certain groups of stars (asterisms). The year is divided into twenty-seven Nakaiy which are grouped into two distinctive seasons: Iruvaa and Hulhangu."
 
+# What is it?
+
+"Nakaiy is a calendar system, a derivative from the Indus Valley Civilization, based on observations of subtle changes in the weather. Each Nakaiy is a 13-14 day period each with their own characteristics and weather pattern, based on the positions of certain groups of stars (asterisms). The year is divided into twenty-seven Nakaiy which are grouped into two distinctive seasons: Iruvaa and Hulhangu."
+
+# What is it?
+
+"Nakaiy is a calendar system, a derivative from the Indus Valley Civilization, based on observations of subtle changes in the weather. Each Nakaiy is a 13-14 day period each with their own characteristics and weather pattern, based on the positions of certain groups of stars (asterisms). The year is divided into twenty-seven Nakaiy which are grouped into two distinctive seasons: Iruvaa and Hulhangu."
+
+# What is it?
+
+"Nakaiy is a calendar system, a derivative from the Indus Valley Civilization, based on observations of subtle changes in the weather. Each Nakaiy is a 13-14 day period each with their own characteristics and weather pattern, based on the positions of certain groups of stars (asterisms). The year is divided into twenty-seven Nakaiy which are grouped into two distinctive seasons: Iruvaa and Hulhangu."
+
+# What is it?
+
+"Nakaiy is a calendar system, a derivative from the Indus Valley Civilization, based on observations of subtle changes in the weather. Each Nakaiy is a 13-14 day period each with their own characteristics and weather pattern, based on the positions of certain groups of stars (asterisms). The year is divided into twenty-seven Nakaiy which are grouped into two distinctive seasons: Iruvaa and Hulhangu."
+
 # About this Port
 
 This port is written in Swift and (therefore) developed in XCode and it has some features specific to the iOS and iPad OS:
