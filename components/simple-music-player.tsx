@@ -145,7 +145,7 @@ export default function SimpleMusicPlayer({
             <div className="flex flex-row items-center gap-2">
               <button
                 onClick={togglePlay}
-                className="bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 transition-colors flex-shrink-0"
+                className="bg-black/40 hover:bg-orange-600 text-white rounded-full p-2 transition-colors flex-shrink-0"
                 disabled={!isReady}
               >
                 {isPlaying ? (
@@ -200,7 +200,7 @@ export default function SimpleMusicPlayer({
             {/* Large Orange Play Button */}
             <button
               onClick={togglePlay}
-              className="bg-orange-500 hover:bg-orange-600 border border-white text-white rounded-full p-4 transition-colors flex-shrink-0 m-1"
+              className=" bg-black/40 hover:bg-orange-600 border rounded-full p-4 transition-colors flex-shrink-0 m-1"
               disabled={!isReady}
             >
               {isPlaying ? (
