@@ -57,7 +57,7 @@ export default async function Home() {
       <h1 className="font-roboto-slab text-2xl font-normal content-bg px-3 my-2 inline-block dark:bg-black dark:bg-opacity-60">
         Music
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {sortedEntries.map((entry, index) => {
           if (entry.type === "music") {
             return <MusicPreview key={index} entry={entry} />;

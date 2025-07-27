@@ -2,9 +2,10 @@
 title: At the Edge
 isAlbum: false
 description: A slow, contemplative piano piece
-coverImage: /images/music/attheedge.png
+coverImage: /images/music/attheedge.jpg
 isSoundcloud: true
 songUrl: https://soundcloud.com/nxtrsmusic/at-the-edge
+audioFile: /music/attheedge.mp3
 created: "2025-03-20"
 updated: "2025-03-20"
 tracks:

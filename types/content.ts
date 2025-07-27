@@ -22,6 +22,7 @@ export interface MusicContent extends BaseContent {
   coverImage?: string;
   isSoundcloud: boolean;
   songUrl: string;
+  audioFile?: string; // Path to hosted audio file (e.g., "/music/track.mp3")
   tracks?: string[];
 }
 

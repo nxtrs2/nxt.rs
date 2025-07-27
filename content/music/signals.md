@@ -2,10 +2,11 @@
 title: Signals (from Proxima)
 isAlbum: false
 description: A fast paced synthrock instrumental song
-coverImage: /images/music/signals1.png
+coverImage: /images/music/signals.jpg
 isSoundcloud: true
-songUrl: https://soundcloud.com/nxtrsmusic/signals-from-proxima
-created: "2025-03-21"
+songUrl: https://soundcloud.com/nxtrsmusic/signals
+audioFile: /music/signals.mp3
+created: "2020-03-20"
 updated: "2025-03-21"
 tracks:
 ---
