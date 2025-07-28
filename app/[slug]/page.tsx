@@ -1,8 +1,9 @@
 import { getMarkdownData } from "@/lib/markdown";
+import type { PageContent } from "@/types/content";
 import MarkdownContent from "@/components/MarkDownContent";
+import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
-import type { PageContent } from "@/types/content";
 
 export async function generateStaticParams() {
   const pagesDir = path.join(process.cwd(), "content", "pages");
@@ -29,6 +30,10 @@ export default async function Page(props: { params: Params }) {
   const params = props.params;
   const slug = (await params).slug;
   const page = await getMarkdownData<PageContent>("pages", slug);
+
+  if (!page) {
+    notFound();
+  }
 
   return (
     <div className="space-y-6 pb-24">

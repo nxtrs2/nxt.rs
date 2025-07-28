@@ -1,10 +1,10 @@
 import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import type { WordsContent } from "@/types/content";
 import MarkdownContent from "@/components/MarkDownContent";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   const entries = await getAllMarkdownFiles<WordsContent>("words");
@@ -20,6 +20,10 @@ export default async function WordEntry(props: { params: Params }) {
   const params = props.params;
   const slug = (await params).slug;
   const entry = await getMarkdownData<WordsContent>("words", slug);
+
+  if (!entry) {
+    notFound();
+  }
 
   return (
     <div className="space-y-2 mb-32 md:mb-0  ">

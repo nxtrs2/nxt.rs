@@ -2,12 +2,13 @@ import { getMarkdownData, getAllMarkdownFiles } from "@/lib/markdown";
 import Image from "next/image";
 // import { formatDate } from "@/lib/utils";
 import type { PhotoGallery } from "@/types/content";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const galleries = await getAllMarkdownFiles<PhotoGallery>("photos");
+  const entries = await getAllMarkdownFiles<PhotoGallery>("photos");
 
-  return galleries.map((gallery) => ({
-    slug: gallery.id,
+  return entries.map((entry) => ({
+    slug: entry.id,
   }));
 }
 
@@ -17,6 +18,10 @@ export default async function PhotoGalleryPage(props: { params: Params }) {
   const params = props.params;
   const slug = (await params).slug;
   const gallery = await getMarkdownData<PhotoGallery>("photos", slug);
+
+  if (!gallery) {
+    notFound();
+  }
 
   return (
     <div className="space-y-5 pb-24">

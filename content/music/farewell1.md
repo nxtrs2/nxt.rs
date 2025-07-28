@@ -1,7 +1,7 @@
 ---
 title: We Bid Farewell and Look to the Stars
 isAlbum: false
-description: A contemplation of the nature of departures
+description: We leave earth behind to colonise another planet
 coverImage: /images/music/farewell1.jpg
 isSoundcloud: true
 songUrl: https://soundcloud.com/nxtrsmusic/we-bid-farewell-and-looked-to

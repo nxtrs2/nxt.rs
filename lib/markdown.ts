@@ -8,13 +8,19 @@ import type { BaseContent, ContentItem } from "@/types/content";
 export async function getMarkdownData<T extends BaseContent>(
   directory: string,
   filename: string
-): Promise<T> {
+): Promise<T | null> {
   const fullPath = path.join(
     process.cwd(),
     "content",
     directory,
     `${filename}.md`
   );
+
+  // Check if file exists before trying to read it
+  if (!fs.existsSync(fullPath)) {
+    return null;
+  }
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
