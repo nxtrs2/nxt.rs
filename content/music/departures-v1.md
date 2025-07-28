@@ -6,7 +6,7 @@ coverImage: /images/music/departures1.jpg
 isSoundcloud: true
 songUrl: https://soundcloud.com/nxtrsmusic/on-the-nature-of-departures
 audioFile: /music/overture.m4a
-created: "2020-03-21"
+created: "2020-03-23"
 updated: "2025-03-21"
 tracks:
 ---

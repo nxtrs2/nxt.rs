@@ -29,10 +29,8 @@ export default async function Home() {
   return (
     <div className="pb-32">
       <p className="content-bg prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60 mb-2">
-        This is the website of NXTRS, a software engineer, amateur musician and
-        somewhat of a writer. I am known by some simply as Simon. Here you can
-        find my latest work in coding, music and whatever else. You can read
-        more <Link href="/about">here</Link>.
+        Welcome to NXT.RS - the portfolio of Simon: software engineer, amateur
+        musician and writer. You can read more <Link href="/about">here</Link>.
       </p>
       <h1 className="font-roboto-slab text-2xl font-normal content-bg px-3 my-2 inline-block dark:bg-black dark:bg-opacity-60">
         Code

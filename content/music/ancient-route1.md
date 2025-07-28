@@ -1,12 +1,12 @@
 ---
-title: Ancient Route, New Journey
+title: Ancient Route, New Journey (v1)
 isAlbum: false
 description: A synthrock journey
 coverImage: /images/music/ancientroute.jpg
 isSoundcloud: true
 songUrl: https://soundcloud.com/nxtrsmusic/ancient-route-new-journey
 audioFile: /music/ancient-route.mp3
-created: "2025-03-19"
+created: "2020-03-19"
 updated: "2025-03-19"
 tracks:
 ---
