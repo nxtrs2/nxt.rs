@@ -124,7 +124,7 @@ export default function ModalMusicPlayer({
   return (
     <div
       className={cn(
-        "relative w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-lg overflow-hidden bg-black",
+        "relative w-96 h-96 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-lg overflow-hidden bg-black",
         className
       )}
     >
@@ -157,7 +157,7 @@ export default function ModalMusicPlayer({
               : "opacity-0 ease-in-out h-0 overflow-hidden"
           }`}
         >
-          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 md:p-6 text-white text-sm md:text-base">
+          <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 md:p-6 text-white font-bold text-sm md:text-base">
             {contentHtml && (
               <div
                 className="prose dark:prose-invert"
