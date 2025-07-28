@@ -285,7 +285,7 @@ export default function ModalMusicPlayer({
               step="0.01"
               value={isMuted ? 0 : volume}
               onChange={(e) => handleVolumeChange(parseFloat(e.target.value))}
-              className="w-12 md:w-16 h-1 md:h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer slider"
+              className="w-12 md:w-16 h-1 md:h-1.5 rounded-lg  cursor-pointer slider"
             />
           </div>
 
