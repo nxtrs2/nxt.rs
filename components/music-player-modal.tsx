@@ -27,6 +27,7 @@ export default function MusicPlayerModal({
           audioFile={music.audioFile || music.songUrl}
           title={music.title}
           coverImage={music.coverImage}
+          video={music.video}
           contentHtml={music.contentHtml}
           tracks={music.tracks}
           trackId={music.id}

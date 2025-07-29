@@ -8,6 +8,7 @@ interface PageMusicPlayerProps {
   audioFile: string;
   title: string;
   coverImage?: string;
+  video?: string;
   className?: string;
   contentHtml?: string;
   tracks?: string[];
@@ -17,17 +18,25 @@ export default function PageMusicPlayer({
   audioFile,
   title,
   coverImage,
+  video,
   className,
   contentHtml,
   tracks,
 }: PageMusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -71,10 +80,29 @@ export default function PageMusicPlayer({
 
     if (isPlaying) {
       audio.pause();
+      // Pause video when audio is paused
+      if (video && videoRef.current) {
+        videoRef.current.pause();
+      }
     } else {
       audio.play().catch((error) => {
         console.error("Error playing audio:", error);
       });
+      // Start video when audio starts playing
+      if (video && !videoStarted) {
+        setVideoStarted(true);
+        // Start the video element
+        if (videoRef.current) {
+          videoRef.current.play().catch((error) => {
+            console.error("Error playing video:", error);
+          });
+        }
+      } else if (video && videoRef.current) {
+        // Resume video if it was already started
+        videoRef.current.play().catch((error) => {
+          console.error("Error playing video:", error);
+        });
+      }
     }
   };
 
@@ -129,8 +157,29 @@ export default function PageMusicPlayer({
           onError={(e) => console.error("Audio error:", e)}
         />
 
-        {/* Album Cover Background */}
-        {coverImage && (
+        {/* Video Background */}
+        {video && isClient && (
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            muted
+            loop
+            playsInline
+            poster={coverImage}
+          >
+            <source src={`/images/music/videos/${video}`} type="video/mp4" />
+            {/* Fallback to cover image if video fails to load */}
+            {coverImage && (
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${coverImage})` }}
+              />
+            )}
+          </video>
+        )}
+
+        {/* Album Cover Background (fallback when no video) */}
+        {!video && coverImage && (
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${coverImage})` }}

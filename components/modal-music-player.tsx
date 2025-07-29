@@ -8,6 +8,7 @@ interface ModalMusicPlayerProps {
   audioFile: string;
   title: string;
   coverImage?: string;
+  video?: string;
   className?: string;
   contentHtml?: string;
   tracks?: string[];
@@ -18,12 +19,14 @@ export default function ModalMusicPlayer({
   audioFile,
   title,
   coverImage,
+  video,
   className,
   contentHtml,
   tracks,
   trackId,
 }: ModalMusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
@@ -32,6 +35,12 @@ export default function ModalMusicPlayer({
   const [isReady, setIsReady] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -75,10 +84,29 @@ export default function ModalMusicPlayer({
 
     if (isPlaying) {
       audio.pause();
+      // Pause video when audio is paused
+      if (video && videoRef.current) {
+        videoRef.current.pause();
+      }
     } else {
       audio.play().catch((error) => {
         console.error("Error playing audio:", error);
       });
+      // Start video when audio starts playing
+      if (video && !videoStarted) {
+        setVideoStarted(true);
+        // Start the video element
+        if (videoRef.current) {
+          videoRef.current.play().catch((error) => {
+            console.error("Error playing video:", error);
+          });
+        }
+      } else if (video && videoRef.current) {
+        // Resume video if it was already started
+        videoRef.current.play().catch((error) => {
+          console.error("Error playing video:", error);
+        });
+      }
     }
   };
 
@@ -136,8 +164,29 @@ export default function ModalMusicPlayer({
         onError={(e) => console.error("Audio error:", e)}
       />
 
-      {/* Album Cover Background */}
-      {coverImage && (
+      {/* Video Background */}
+      {video && isClient && (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          muted
+          loop
+          playsInline
+          poster={coverImage}
+        >
+          <source src={`/images/music/videos/${video}`} type="video/mp4" />
+          {/* Fallback to cover image if video fails to load */}
+          {coverImage && (
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${coverImage})` }}
+            />
+          )}
+        </video>
+      )}
+
+      {/* Album Cover Background (fallback when no video) */}
+      {!video && coverImage && (
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${coverImage})` }}

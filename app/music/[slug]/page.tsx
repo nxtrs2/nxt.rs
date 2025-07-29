@@ -45,6 +45,7 @@ export default async function MusicEntry(props: { params: Params }) {
           audioFile={entry.audioFile}
           title={entry.title}
           coverImage={entry.coverImage}
+          video={entry.video}
           contentHtml={entry.contentHtml}
           tracks={entry.tracks}
         />
