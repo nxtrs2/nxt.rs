@@ -20,3 +20,7 @@ So that's the story of NXTRS.
 # This Website
 
 It is NextJS using markdown files for content and hosted on netlify.
+
+# Get the Site
+
+If you like this website and the theme you can fork it [from Github](https://github.com/nxtrs2/nxt.rs).
