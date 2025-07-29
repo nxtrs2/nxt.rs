@@ -1,6 +1,8 @@
 "use client";
 import { useState, ChangeEvent } from "react";
 import Head from "next/head";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 const Home = () => {
   const [inputText, setInputText] = useState<string>("");
@@ -59,9 +61,14 @@ const Home = () => {
 
   return (
     <div className="space-y-5 mb-24 m:mb-0">
-      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
-        Speak &amp; Spell Caesar Cipher
-      </h1>{" "}
+      <div className="flex justify-between items-center">
+        <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+          Speak &amp; Spell Caesar Cipher
+        </h1>{" "}
+        <Link href="/about" className="text-sm ml-2">
+          <ArrowLeft className="h-8 w-8" />
+        </Link>
+      </div>
       <div className="content-bg mt-1 prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60">
         <div className="grid gap-6">
           <p className="mb-2">Enter your text below and click "=":</p>

@@ -27,24 +27,37 @@ export default function LargeCodePreview({ entry }: LargeCodePreviewProps) {
             />
           </div>
         )}
-        <div className="bg-black dark:bg-opacity-60 p-4">
+      </Link>
+      <div className="bg-black dark:bg-opacity-60 p-4">
+        <Link
+          href={`/code/${entry.id}`}
+          className="block hover:opacity-90 transition-opacity"
+        >
           <h3 className="font-roboto-slab text-white text-xl mb-2">
             {entry.title}
           </h3>
           {entry.description && (
             <p className="text-gray-300 text-sm mb-3">{entry.description}</p>
           )}
-          <div className="flex justify-end items-center">
-            {/* <span className="text-gray-400 text-sm">
+        </Link>
+        <div className="flex justify-end items-center">
+          {/* <span className="text-gray-400 text-sm">
               {entry.created && new Date(entry.created).toLocaleDateString()}
             </span> */}
-
+          <Link
+            href={`/code`}
+            className="block hover:opacity-90 transition-opacity"
+          >
             <span className="text-white hover:text-gray-300 transition-colors">
-              View →
+              View all Code →
             </span>
-          </div>
+          </Link>
+
+          {/* <span className="text-white hover:text-gray-300 transition-colors">
+              View →
+            </span> */}
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

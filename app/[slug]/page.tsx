@@ -4,6 +4,8 @@ import MarkdownContent from "@/components/MarkDownContent";
 import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   const pagesDir = path.join(process.cwd(), "content", "pages");
@@ -37,9 +39,14 @@ export default async function Page(props: { params: Params }) {
 
   return (
     <div className="space-y-6 pb-24">
-      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
-        {page.title}
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+          {page.title}
+        </h1>
+        <Link href="/" className="text-sm ml-2">
+          <ArrowLeft className="h-8 w-8" />
+        </Link>
+      </div>
 
       {/* <div
         className="prose prose-sm dark:prose-invert"

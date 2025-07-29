@@ -11,4 +11,4 @@ updated: "2025-03-21"
 tracks:
 ---
 
-This is the third version of the song. This has to be one of my favourite songs. The drums were recorded by a Canadian drummer. I really like this mix as well. This still does not have the synth and guitar solos. That would be the 4th version.
+This is the third version of the song. This has to be one of my favourite songs. The drums were recorded by a drummer. I really like this mix as well. This still does not have the synth and guitar solos. That would be the 4th version.

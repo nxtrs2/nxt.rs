@@ -13,6 +13,7 @@ interface ModalMusicPlayerProps {
   contentHtml?: string;
   tracks?: string[];
   trackId?: string;
+  onClose?: () => void;
 }
 
 export default function ModalMusicPlayer({
@@ -24,6 +25,7 @@ export default function ModalMusicPlayer({
   contentHtml,
   tracks,
   trackId,
+  onClose,
 }: ModalMusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,6 +37,7 @@ export default function ModalMusicPlayer({
   const [isReady, setIsReady] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copyAnimation, setCopyAnimation] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -196,6 +199,16 @@ export default function ModalMusicPlayer({
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
+      {/* Close Button */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-20 bg-black/40 hover:bg-black/60 backdrop-blur-sm text-white rounded-full p-2 transition-all duration-200 transform hover:scale-105"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      )}
+
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-8">
         {/* Info Box */}
@@ -267,20 +280,35 @@ export default function ModalMusicPlayer({
                       .replace(/^-+|-+$/g, "")}`;
                 await navigator.clipboard.writeText(trackUrl);
 
-                // Show copied feedback
+                // Show copied feedback with animation
                 setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
+                setCopyAnimation(true);
+
+                // Reset animation after it completes
+                setTimeout(() => {
+                  setCopyAnimation(false);
+                  setCopied(false);
+                }, 2000);
               } catch (error) {
                 console.error("Failed to copy link:", error);
               }
             }}
-            className={`cursor-pointer backdrop-blur-sm text-white rounded-full p-1.5 md:p-2 transition-all duration-200 transform hover:scale-105 flex-shrink-0 ${
+            className={`relative cursor-pointer backdrop-blur-sm text-white rounded-full p-1.5 md:p-2 transition-all duration-200 transform hover:scale-105 flex-shrink-0 ${
               copied
                 ? "bg-gray-500/80 hover:bg-gray-600/80"
                 : "bg-none hover:bg-white/30"
             }`}
             title={copied ? "Link copied!" : "Copy link"}
           >
+            {/* Animated "Copied!" text overlay */}
+            {copyAnimation && (
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span className="text-xs font-medium text-white animate-copy-feedback">
+                  Copied!
+                </span>
+              </div>
+            )}
+
             {copied ? (
               <svg
                 className="h-4 w-4 md:h-5 md:w-5"

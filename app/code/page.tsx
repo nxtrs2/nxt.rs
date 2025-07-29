@@ -3,15 +3,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/utils";
 import type { CodeContent } from "@/types/content";
+import { ArrowLeft } from "lucide-react";
 
 export default async function CodePage() {
   const entries = (await getAllMarkdownFiles<CodeContent>("code")).slice(0, 4);
 
   return (
     <div className="space-y-2 mb-32 m:mb-0 ">
-      <h1 className="font-roboto-slab text-2xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
-        Code
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="font-roboto-slab text-2xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+          Code
+        </h1>
+        <Link href="/" className="text-sm ml-2">
+          <ArrowLeft className="h-8 w-8" />
+        </Link>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-2 gap-5">
         {entries.map((entry) => (

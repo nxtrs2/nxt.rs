@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import type { MusicContent, ContentItem } from "@/types/content";
 import MusicPlayerModal from "@/components/music-player-modal";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function MusicPage() {
   const [entries, setEntries] = useState<(MusicContent & ContentItem)[]>([]);
@@ -62,9 +64,14 @@ export default function MusicPage() {
 
   return (
     <div className="space-y-2 mb-32 m:mb-0 ">
-      <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
-        Music
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="font-roboto-slab text-xl font-normal content-bg px-3 py-1 inline-block dark:bg-black dark:bg-opacity-60">
+          Music
+        </h1>
+        <Link href="/" className="text-sm ml-2">
+          <ArrowLeft className="h-8 w-8" />
+        </Link>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
         {entries.map((entry) => (

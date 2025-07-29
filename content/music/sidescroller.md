@@ -12,4 +12,4 @@ updated: "2025-03-21"
 tracks:
 ---
 
-This track started out as an exploration of more classical works. Whether I was able to put something together or not was the challenge.
+This was Day 2 of a Track a Day Challenge (my personal thing). I started with laying some drum loops and then it just came to life like this. This is how most of my music gets made. I don't mean by first laying drums but just any instrument.

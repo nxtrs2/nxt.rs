@@ -27,23 +27,34 @@ export default function LargeWordsPreview({ entry }: LargeWordsPreviewProps) {
             />
           </div>
         )}
-        <div className="bg-black dark:bg-opacity-60 p-4">
+      </Link>
+      <div className="bg-black dark:bg-opacity-60 p-4">
+        <Link
+          href={`/words/${entry.id}`}
+          className="block hover:opacity-90 transition-opacity"
+        >
           <h3 className="font-roboto-slab text-white text-xl mb-2">
             {entry.title}
           </h3>
           {entry.description && (
             <p className="text-gray-300 text-sm mb-3">{entry.description}</p>
           )}
-          <div className="flex justify-end items-center">
-            {/* <span className="text-gray-400 text-sm">
+        </Link>
+
+        <div className="flex justify-end items-center">
+          {/* <span className="text-gray-400 text-sm">
               {entry.created && new Date(entry.created).toLocaleDateString()}
             </span> */}
+          <Link
+            href={`/words`}
+            className="block hover:opacity-90 transition-opacity"
+          >
             <span className="text-white hover:text-gray-300 transition-colors">
-              Read →
+              View all Words →
             </span>
-          </div>
+          </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

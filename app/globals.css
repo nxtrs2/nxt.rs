@@ -188,3 +188,27 @@ p a:hover {
   width: 1rem;
   border: none;
 }
+
+/* Copy feedback animation */
+@keyframes copy-feedback {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.9);
+  }
+}
+
+.animate-copy-feedback {
+  animation: copy-feedback 2s ease-out forwards;
+}

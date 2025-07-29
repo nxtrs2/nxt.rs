@@ -31,6 +31,7 @@ export default function MusicPlayerModal({
           contentHtml={music.contentHtml}
           tracks={music.tracks}
           trackId={music.id}
+          onClose={onClose}
         />
       </DialogContent>
     </Dialog>
