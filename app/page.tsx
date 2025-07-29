@@ -22,7 +22,7 @@ export default async function Home() {
   return (
     <div className="pb-32 ">
       <p className="content-bg prose prose-sm dark:prose-invert p-3 dark:bg-black dark:bg-opacity-60 mb-2">
-        Welcome to NXT.RS - my portfolio or works showcasing some of my work as
+        Welcome to NXT.RS - my portfolio of works showcasing some of my work as
         a Software engineer, amateur musician and writer. You can read more{" "}
         <Link href="/about">here</Link>.
       </p>
