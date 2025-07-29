@@ -2,7 +2,7 @@
 title: About
 ---
 
-NXT.RS is the personal portfolio of my works. I am Simon - a software engineer by profession, an amateur musician and I sometimes I also write stuff.
+NXT.RS is the personal portfolio of my works. I am Simon - a software engineer by profession, an amateur musician and sometimes I also write stuff.
 
 # So, what is NXTRS?
 
