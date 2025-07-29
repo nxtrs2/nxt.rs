@@ -1,6 +1,7 @@
 ---
 title: The Sauce
 heroImage: /images/words/thesauce.jpg
+description: Flash Fiction. The leader of a music band has a premonition. Maybe?
 created: "2024-04-09"
 updated: "2025-06-15"
 ---

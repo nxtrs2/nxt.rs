@@ -1,6 +1,7 @@
 ---
 title: Cracks May Appear
 heroImage: /images/words/cracks.jpg
+description: Flash Fiction. Centuries into incarceration make cracks appear.
 created: "2024-04-11"
 updated: "2023-06-15"
 ---

@@ -1,6 +1,7 @@
 ---
 title: Cobir 388-2
 heroImage: /images/words/cobir.jpg
+description: Short Story. The driver of a car maybe more than who he thought he was.
 created: "2023-04-23"
 updated: "2025-06-15"
 ---

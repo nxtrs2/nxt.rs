@@ -21,7 +21,7 @@ export default function Navigation() {
   ];
 
   return (
-    <div className="fixed inset-x-0 bottom-0 flex justify-center md:me-8 md:mb-1 m-0">
+    <div className="fixed inset-x-0 bottom-0  flex justify-center md:me-8 md:mb-1 m-0 z-50">
       <div className="w-full max-w-[1024px]">
         <nav className="md:p-4 p-0">
           {/* Mobile Toggle Button */}
@@ -45,7 +45,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-white md:bg-transparent md:text-2xl hover:text-gray-200 dark:hover:text-gray-200 transition-colors text-sm font-bold md:font-normal",
+                  "text-white md:bg-transparent md:text-2xl hover:text-gray-900 dark:hover:text-gray-400 transition-colors text-sm font-bold md:font-normal",
                   pathname === link.href && "font-bold"
                 )}
               >

@@ -41,6 +41,7 @@ export interface PhotoGallery extends BaseContent {
 // Words content type
 export interface WordsContent extends BaseContent {
   heroImage?: string;
+  description?: string;
 }
 
 // Page content type

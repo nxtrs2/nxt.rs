@@ -26,7 +26,7 @@ export default async function WordEntry(props: { params: Params }) {
   }
 
   return (
-    <div className="space-y-2 mb-32 md:mb-0  ">
+    <div className="space-y-2 mb-32 md:mb-0">
       <div className="flex items-center justify-between">
         <h1 className="inline-block py-1 px-3 font-roboto-slab text-2xl font-normal content-bg dark:bg-black dark:bg-opacity-60">
           {entry.title}

@@ -23,14 +23,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen w-full bg-image">
+            <Navigation />
             <div className="mx-auto max-w-[1024px] min-h-screen relative z-10">
               <div className="p-4 md:p-6">
                 <Logo />
 
                 <div className="mx-auto md:w-[690px]">{children}</div>
               </div>
-
-              <Navigation />
             </div>
 
             {/* <div className="mx-auto max-w-[1024px] min-h-screen relative z-10">
